@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<canvas id="visualization" width="600" height="600"></canvas>
+		<script type="text/javascript" src="shots.json"></script>
+		<script type="text/javascript" src="profilePhotoLink.json"></script>
+		<script type="text/javascript" src="LeagueAverages.json"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body onLoad="main()">
+		<div style="display:flex">
+			<div style="display:none; flex:50%">
+					<img id="court" src="./halfcourt.svg">
+			</div>
+			<div style:"flex:50%; padding:5px">
+				<img id="playerPhoto">
+			</div>
+		</div>
+	</body>
+</html>
