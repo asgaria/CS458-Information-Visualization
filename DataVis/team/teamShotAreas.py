@@ -1,7 +1,8 @@
 import json 
 import nba_py 
 import sys
-
+import webbrowser
+import os
 from nba_py import team as team 
 from nba_py import constants as constants
 
@@ -18,3 +19,7 @@ print json.dumps(singleTeam, indent=4)
 print (teamID)
 print json.dumps(teamShootingSplits, indent=4)
 
+with open('teamShots.json', 'w') as f:
+	f.write("teamShots='" + json.dumps(teamShootingSplits) + "'")
+
+webbrowser.open("file://" + os.path.realpath("team.html"))

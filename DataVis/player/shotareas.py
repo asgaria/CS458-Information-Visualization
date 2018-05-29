@@ -16,6 +16,10 @@ pID = (p.get_player(firstName, lastName))
 
 
 shootingSplits = p.PlayerShootingSplits(pID).shot_areas()
+playerInfo = p.PlayerSummary(pID).info()
+headlineStats = p.PlayerSummary(pID).headline_stats()
+
+
 playerPhotoLink = "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/" +  str(pID) + ".png"
 linkJSON = {}
 linkJSON['link'] = playerPhotoLink
