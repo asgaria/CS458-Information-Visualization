@@ -1,6 +1,11 @@
 <html>
 	<head>
-		<canvas id="visualization" width="600" height="600"></canvas>
+		<div style="position:relative">
+				<canvas id="visualization" width="600" height="600"></canvas>
+				<div style="position:fixed; top:25px; right: 400px;">
+					<img id="playerPhoto">
+				</div>
+		</div>
 		<script type="text/javascript" src="shots.json"></script>
 		<script type="text/javascript" src="profilePhotoLink.json"></script>
 		<script type="text/javascript" src="LeagueAverages.json"></script>
@@ -10,9 +15,6 @@
 		<div style="display:flex">
 			<div style="display:none; flex:50%">
 					<img id="court" src="./halfcourt.svg">
-			</div>
-			<div style:"flex:50%; padding:5px">
-				<img id="playerPhoto">
 			</div>
 		</div>
 	</body>
