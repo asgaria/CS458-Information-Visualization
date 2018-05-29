@@ -72,8 +72,8 @@ function main() {
 	var shotData =  JSON.parse(teamShots);
 	//var photo = JSON.parse(link);
 	
-	//var photoElement = document.getElementById("playerPhoto");
-	//photoElement.src = photo["link"];
+	var photoElement = document.getElementById("teamPhoto");
+	photoElement.src = "https://stats.nba.com/media/img/teams/logos/season/2017-18/GSW_logo.svg";
 	
 	drawCourt();
 	
