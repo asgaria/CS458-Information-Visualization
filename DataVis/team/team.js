@@ -70,10 +70,13 @@ function calcColor(fgPercent, leagueAvg) {
 function main() {
 	var leagueAvgs = JSON.parse(averages);
 	var shotData =  JSON.parse(teamShots);
-	//var photo = JSON.parse(link);
-	
+	var teamData = JSON.parse(teamInfo);
+	console.log("1");
+	var teamAbbr = teamData["abbr"];
+	console.log("2");
+
 	var photoElement = document.getElementById("teamPhoto");
-	photoElement.src = "https://stats.nba.com/media/img/teams/logos/season/2017-18/GSW_logo.svg";
+	photoElement.src = "https://stats.nba.com/media/img/teams/logos/season/2017-18/" + String(teamAbbr) + "_logo.svg";
 	
 	drawCourt();
 	

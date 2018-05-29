@@ -22,4 +22,7 @@ print json.dumps(teamShootingSplits, indent=4)
 with open('teamShots.json', 'w') as f:
 	f.write("teamShots='" + json.dumps(teamShootingSplits) + "'")
 
+with open('teamInfo.json', 'w') as f:
+	f.write("teamInfo='" + json.dumps(singleTeam) + "'")
+
 webbrowser.open("file://" + os.path.realpath("team.html"))
