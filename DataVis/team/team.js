@@ -71,9 +71,11 @@ function main() {
 	var leagueAvgs = JSON.parse(averages);
 	var shotData =  JSON.parse(teamShots);
 	var teamData = JSON.parse(teamInfo);
-	console.log("1");
-	var teamAbbr = teamData["abbr"];
-	console.log("2");
+	
+	var teamAbbr = teamData[0]["TEAM_ABBREVIATION"];
+	
+	//var winLossElement = document.getElementById("winLoss");
+	//winLossElement.textContent = teamData[0]["W"] + " - " + teamData[0]["L"];
 
 	var photoElement = document.getElementById("teamPhoto");
 	photoElement.src = "https://stats.nba.com/media/img/teams/logos/season/2017-18/" + String(teamAbbr) + "_logo.svg";
