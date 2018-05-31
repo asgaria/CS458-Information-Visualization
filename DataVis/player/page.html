@@ -2,11 +2,28 @@
 	<head>
 		<div style="position:relative">
 				<canvas id="visualization" width="600" height="600"></canvas>
-				<div style="position:fixed; top:25px; right: 400px;">
-					<img id="playerPhoto">
+				<div style="position:fixed; top:25px; right: 0px; width:50%;">
+					<img id="playerPhoto" style="float:left">
+					<span id=nameLabel style="line-height: 1.0"> Name: <span id=name> </span> </span>
+					<br>
+					<span id=positionLabel> Position: <span id=position> </span> </span>
+					<br>
+					<span id=teamLabel> Team: <span id=team> </span> </span>
+					<br>
+					<span id=heightLabel> Height: <span id=height> </span> </span>
+					<br>
+					<span id=weightLabel> Weight: <span id=weight> </span> </span>
+					<br>
+					<span id=ptsLabel> PPG: <span id=pts> </span> </span>
+					<br>
+					<span id=rebLabel> REB: <span id=reb> </span> </span>
+					<br>
+					<span id=astLabel> AST: <span id=ast> </span> </span>
 				</div>
 		</div>
 		<script type="text/javascript" src="shots.json"></script>
+		<script type="text/javascript" src="generalInfo.json"></script>
+		<script type="text/javascript" src="headlineInfo.json"></script>
 		<script type="text/javascript" src="profilePhotoLink.json"></script>
 		<script type="text/javascript" src="LeagueAverages.json"></script>
 		<script type="text/javascript" src="main.js"></script>

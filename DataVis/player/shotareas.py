@@ -2,7 +2,7 @@ import nba_py
 import json
 import sys
 import webbrowser
-
+import os
 from nba_py import team as team
 from nba_py import player as p
 from nba_py import constants as constants
@@ -22,7 +22,9 @@ headlineStats = p.PlayerSummary(pID).headline_stats()
 
 playerPhotoLink = "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/" +  str(pID) + ".png"
 linkJSON = {}
-linkJSON['link'] = playerPhotoLink
+print(json.dumps(headlineStats, indent=4))
+print (type(playerInfo))
+playerInfo[0]["link"] = playerPhotoLink
 
 twoMade = 0
 twoAttempted = 0
@@ -51,7 +53,13 @@ print("Total shots made: " + str(totalMade) + " Total shots attempted: " + str(t
 with open('shots.json', 'w') as f:
 	f.write("shots='" + json.dumps(shootingSplits) + "'")
 
-with open('profilePhotoLink.json', 'w') as f:
-    f.write("link='" + json.dumps(linkJSON) + "'")
+#with open('profilePhotoLink.json', 'w') as f:
+ #   f.write("link='" + json.dumps(linkJSON) + "'")
 
-webbrowser.open("page.html")
+with open('generalInfo.json', 'w') as f:
+    f.write("generalInfo='" + json.dumps(playerInfo) + "'")
+
+with open('headlineInfo.json', 'w') as f:
+    f.write("headlineInfo='" + json.dumps(headlineStats) + "'")
+
+webbrowser.open("file://" + os.path.realpath("page.html"))

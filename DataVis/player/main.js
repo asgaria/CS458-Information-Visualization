@@ -67,13 +67,40 @@ function calcColor(fgPercent, leagueAvg) {
 	return color;
 }
 
+function fillPlayerInfo(generalData, headlineData)
+{
+	var photoElement = document.getElementById("playerPhoto");
+	var nameElement = document.getElementById("name");
+	var positionElement = document.getElementById("position");
+	var teamElement = document.getElementById("team");
+	var heightElement = document.getElementById("height");
+	var weightElement = document.getElementById("weight");
+
+	var ptsElement = document.getElementById("pts");
+	var rebElement = document.getElementById("reb");
+	var astElement = document.getElementById("ast");
+
+	photoElement.src = generalData["link"];
+	positionElement.textContent = generalData["POSITION"];
+	nameElement.textContent = generalData["DISPLAY_FIRST_LAST"];
+	heightElement.textContent = generalData["HEIGHT"];
+	weightElement.textContent = generalData["WEIGHT"];
+	teamElement.textContent = generalData["TEAM_CITY"] + " " + generalData["TEAM_NAME"];
+
+	ptsElement.textContent = headlineData["PTS"];
+	rebElement.textContent = headlineData["REB"];
+	astElement.textContent = headlineData["AST"];
+
+}
+
 function main() {
+
 	var leagueAvgs = JSON.parse(averages);
 	var shotData =  JSON.parse(shots);
-	var photo = JSON.parse(link);
-	
-	var photoElement = document.getElementById("playerPhoto");
-	photoElement.src = photo["link"];
+	var generalData = JSON.parse(generalInfo);
+	var headlineData = JSON.parse(headlineInfo);
+
+	fillPlayerInfo(generalData[0], headlineData[0]);
 	
 	drawCourt();
 	
