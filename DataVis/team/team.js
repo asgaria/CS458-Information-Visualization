@@ -51,17 +51,18 @@ function calcColor(fgPercent, leagueAvg) {
 	var color;
 	
 	if(fgPercent < leagueAvg) {
-		var t = fgPercent - leagueAvg; //previously fgPercent/leagueAvg
-		var red = Math.floor(lerp(255, 0, t));
-		var blue = Math.floor(lerp(0, 255, t));
-		color = "#" + decToColorChannel(red) + "00" + decToColorChannel(blue);
+		var t = (0.5 / leagueAvg) * fgPercent;
+		var red = Math.floor(lerp(255, 128, t));
+		var green = Math.floor(lerp(0, 128, t));
+		var blue = Math.floor(lerp(0, 0, t));
+		color = "#" + decToColorChannel(red) + decToColorChannel(green) + decToColorChannel(blue);
 	}
 	else {
-		//var t = (fgPercent - leagueAvg)/leagueAvg;
-		var t = fgPercent + leagueAvg;
-		var blue = Math.floor(lerp(255, 0, t));
-		var green = Math.floor(lerp(0, 255, t));
-		color = "#00" + decToColorChannel(green) + decToColorChannel(blue);
+		var t = (0.5 / leagueAvg) * fgPercent;
+		var red = Math.floor(lerp(128, 0, t));
+		var green = Math.floor(lerp(128, 255, t));
+		var blue = Math.floor(lerp(0, 0, t));
+		color = "#" + decToColorChannel(red) + decToColorChannel(green) + decToColorChannel(blue);
 	}
 	
 	return color;
